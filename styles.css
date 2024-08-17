@@ -1,0 +1,163 @@
+body {
+  background-color: hsl(214, 47%, 23%);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+}
+
+.game-container {
+  text-align: center;
+  position: relative;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(229, 25%, 31%);
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  width: 300px;
+}
+
+.score-title {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 100px;
+}
+
+#score, #computer-score {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100px;
+}
+
+
+.game-options {
+  width: 350px; /* زادت العرض لتوسيع المساحة حول الدائرة */
+  height: 350px; /* زادت الارتفاع لتوسيع المساحة حول الدائرة */
+  position: relative;
+  margin: 40px auto; /* زادت المسافة لإنشاء مساحة إضافية فوق وتحت */
+}
+
+.option {
+  background-color: white;
+  border-radius: 50%;
+  padding: 20px;
+  width: 70px; /* قلل العرض لتصغير الدوائر قليلاً */
+  height: 70px; /* قلل الارتفاع لتصغير الدوائر قليلاً */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid;
+  cursor: pointer;
+  position: absolute;
+  transition: transform 0.2s ease;
+}
+
+#rock {
+  border-color: hsl(349, 71%, 52%);
+  top: 50%;
+  left: 10%; /* تغيرت النسبة لإعادة توزيع الدوائر حول المحيط */
+  transform: translate(-50%, -50%);
+}
+
+#paper {
+  border-color: hsl(230, 89%, 62%);
+  top: 50%;
+  right: 10%; /* تغيرت النسبة لإعادة توزيع الدوائر حول المحيط */
+  transform: translate(50%, -50%);
+}
+
+#scissors {
+  border-color: hsl(39, 89%, 49%);
+  top: 10%; /* تغيرت النسبة لإعادة توزيع الدوائر حول المحيط */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#lizard {
+  border-color: hsl(261, 73%, 60%);
+  bottom: 10%; /* تغيرت النسبة لإعادة توزيع الدوائر حول المحيط */
+  left: 30%; /* تغيرت النسبة لإعادة توزيع الدوائر حول المحيط */
+  transform: translate(-50%, 50%);
+}
+
+#spock {
+  border-color: hsl(189, 59%, 53%);
+  bottom: 10%; /* تغيرت النسبة لإعادة توزيع الدوائر حول المحيط */
+  right: 30%; /* تغيرت النسبة لإعادة توزيع الدوائر حول المحيط */
+  transform: translate(50%, 50%);
+}
+
+.option img {
+  width: 40px;
+}
+
+.option:hover, .option:focus {
+  transform: scale(1.1);
+}
+
+#play-again {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: hsl(229, 25%, 31%);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  margin-top: 40px; /* زادت المسافة لإنشاء مساحة إضافية أسفل الخيارات */
+}
+
+#play-again:hover {
+  background-color: hsl(229, 25%, 41%);
+}
+
+.hidden {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .game-options {
+    width: 300px;
+    height: 300px;
+  }
+
+  .option {
+    width: 60px;
+    height: 60px;
+  }
+
+  .option img {
+    width: 35px;
+  }
+}
+
+/* Media Query للهواتف المحمولة (شاشات أقل من 600px) */
+@media screen and (max-width: 600px) {
+  .game-options {
+    width: 250px;
+    height: 250px;
+  }
+
+  .option {
+    width: 50px;
+    height: 50px;
+  }
+
+  .option img {
+    width: 30px;
+  }
+
+  #play-again {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    margin-top: 30px;
+  }
+}
